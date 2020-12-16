@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import WeatherImg from './components/WeatherImg/WeatherImg';
+import ProgressHeader from './components/Progress/ProgressHeader';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <WeatherImg />
+    <View style={styles.container2}>
+      <Text>PROGRESS</Text>
+      <ProgressHeader />
+      <Text>I am a Text</Text>
     </View>
   );
 }
@@ -20,4 +20,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  container2: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: 'center',
+    backgroundColor: "#fff",
+    padding: 20,
+    margin: 30,
+  },
+  
 });
