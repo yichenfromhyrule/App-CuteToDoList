@@ -1,5 +1,6 @@
 module.exports = {
     "headerContainer":{
+        flexDirection: 'row',
         height: 150,
         width: 400,
         backgroundColor: "black",
@@ -8,5 +9,12 @@ module.exports = {
     "dailyContainer": {
         height: 200,
         backgroundColor: "blue",
+    },
+    "headerLogo": {
+        height: 160,
+        width: 160,
+    },
+    "headerText": {
+        color: 'white'
     }
 }
