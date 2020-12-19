@@ -14,7 +14,20 @@ module.exports = {
         height: 160,
         width: 160,
     },
+    "headerTextContainer": {
+        width: 240,
+        flexDirection: 'column',
+        textAligin: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     "headerText": {
-        color: 'white'
+        color: 'white',
+        fontSize: 40,
+        margin: 20,
+    },
+    "headerDateText": {
+        fontSize: 25,
+        color: 'white',
     }
 }

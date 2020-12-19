@@ -2,7 +2,7 @@ module.exports = {
     "page": {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: '#fff',
+        backgroundColor: '#27735E',
     },
     "headerBlock": {
         flexDirection: "row",
@@ -19,5 +19,6 @@ module.exports = {
     "headerText": {
         fontSize: 25,
     },
+    
     
 }

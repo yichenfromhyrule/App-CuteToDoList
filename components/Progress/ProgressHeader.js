@@ -12,7 +12,10 @@ export default class ProgressHeader extends Component {
                 style={styles.headerLogo}
                 source = {snowman}
               />
-              <Text style={styles.headerText}>HIIIII</Text>
+              <View style={styles.headerTextContainer}>
+                <Text style={styles.headerDateText}>Today's Goal</Text>
+                <Text style={styles.headerText}>1/5</Text>
+              </View>
             </View>
           </View>
           
