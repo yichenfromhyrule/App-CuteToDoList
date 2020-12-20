@@ -11,6 +11,7 @@ module.exports = {
         textAligin: 'center',
         justifyContent: 'center',
         alignItems: 'center',
+        color: 'white',
     },
     "titleTextEDT": {
         color: 'white',
