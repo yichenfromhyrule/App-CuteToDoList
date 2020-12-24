@@ -18,6 +18,7 @@ export default function App() {
         <EveryDayTasks />
         <View />
       </View>
+
       
       
     </View>
