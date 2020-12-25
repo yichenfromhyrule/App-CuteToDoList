@@ -1,30 +1,11 @@
-/* -- Bottom navigation: quick navigation in bottom bar */
 import * as React from 'react';
 import { BottomNavigation } from 'react-native-paper';
 import { StyleSheet, Text, View } from 'react-native';
-import styles from './AppStyle';
-import ProgressHeader from './components/Progress/ProgressHeader/ProgressHeader';
-import EveryDayTasks from './components/Progress/EveryDayTasks/EveryDayTasks';
+import HomePage from './components/HomePage/HomePage';
 
-const StateRoute = () => 
-  <View style={styles.page}>
-    <View style={styles.titleTextContainer}>
-      <Text style={styles.titleText}>PROGRESS</Text>
-    </View>
-
-    <View style={styles.titleBlock}>
-      <View />
-      <ProgressHeader />
-      <EveryDayTasks />
-      <View />
-    </View>
-
-  </View>;
-
+const StateRoute = () => <HomePage />;
 const ClientRoute = () => <Text>Jobs</Text>;
-
 const SettingRoute = () => <Text>Recents</Text>;
-
 const LogoutRoute = () => <Text>logout</Text>
 
 export default class BottomNavigatonComponent extends React.Component {
