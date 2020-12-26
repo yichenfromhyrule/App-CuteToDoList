@@ -12,7 +12,7 @@ export default class BottomNavigatonComponent extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'state', title: 'Home', icon: 'queue-music' },
+      { key: 'state', title: 'Home' },
       { key: 'client', title: 'Service Log', icon: 'album' },
       { key: 'setting', title: 'Notifications', icon: 'recent_actors' },
       { key: 'logout', title: 'My Wallet', icon: 'recent_actors' },
