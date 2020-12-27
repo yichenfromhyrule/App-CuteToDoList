@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
-import styles from './ProgressStyle';
-import snowman from '../../../resource/snowman/snowman.png';
+/* eslint-disable react/no-unescaped-entities */
+import React, { Component } from "react";
+import { Text, View, Image } from "react-native";
+import styles from "./ProgressStyle";
+import snowman from "../../../resource/snowman/snowman.png";
 
 export default class ProgressHeader extends Component {
   render(){

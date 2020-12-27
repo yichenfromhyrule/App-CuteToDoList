@@ -1,25 +1,22 @@
-module.exports = {
+import { Dimensions } from 'react-native';
+const { height } = Dimensions.get('window');
+export default {
     "page": {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: '#4B6E84',
+        backgroundColor: "white",
     },
     "titleBlock": {
-        flexDirection: 'column',
-        textAligin: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    "titleTextContainer": {
-        height: 50,
-        textAligin: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 50,
+        flexDirection: "column",
+        textAligin: "center",
+        justifyContent: "center",
+        alignItems: "center",
     },
     "titleText": {
-        fontSize: 20,
-        color: 'white',
+        marginTop: 0.05 * height,
+        marginBottom: 0.05 * height,
+        fontSize: 15,
+        color: "black",
     },
     
     
