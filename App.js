@@ -1,41 +1,25 @@
 import * as React from 'react';
-import { BottomNavigation } from 'react-native-paper';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
 import HomePage from './components/HomePage/HomePage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const StateRoute = () => <HomePage />;
-const ClientRoute = () => <Text>Jobs</Text>;
-const SettingRoute = () => <Text>Recents</Text>;
-const LogoutRoute = () => <Text>logout</Text>
-
-export default class BottomNavigatonComponent extends React.Component {
-  state = {
-    index: 0,
-    routes: [
-      { key: 'state', title: 'Home' },
-      { key: 'client', title: 'Service Log', icon: 'album' },
-      { key: 'setting', title: 'Notifications', icon: 'recent_actors' },
-      { key: 'logout', title: 'My Wallet', icon: 'recent_actors' },
-    ],
-  };
-
-  _handleIndexChange = index => this.setState({ index });
-
-  _renderScene = BottomNavigation.SceneMap({
-    state: StateRoute,
-    client: ClientRoute,
-    setting: SettingRoute,
-    logout: LogoutRoute,
-  });
-
-  render() {
-    return (
-      <BottomNavigation
-        navigationState={this.state}
-        onIndexChange={this._handleIndexChange}
-        renderScene={this._renderScene}
-      />
-    );
-  }
+function HomeScreen() {
+  return (
+    <HomePage />
+  );
 }
 
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
