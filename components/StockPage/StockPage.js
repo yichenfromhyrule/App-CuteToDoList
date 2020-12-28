@@ -7,15 +7,19 @@ export default function HomeScreen() {
   const [data, setData] = React.useState('');
   const fetchData = () => {
     setLoading(true);
-    fetch("https://coin-flip1.p.rapidapi.com/headstails", {
+    fetch("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=TSLA", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "6344837b96msh4dd4d2909be9cbbp1320a9jsn673352df54c6",
-		"x-rapidapi-host": "coin-flip1.p.rapidapi.com"
+		"x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
 	}
-    })
+})
       .then((response) => response.json())
-      .then((json) => setData(json.outcome))
+      .then(data => {         
+        console.log(data);
+        console.log(Object.values(data)[0]);
+        
+        })
       .catch(() => Alert.alert('Something went wrong..', 'There was an error fetching coin flip.'))
       .finally(() => {
         setLoading(false)
@@ -39,7 +43,7 @@ export default function HomeScreen() {
         </View>
         <View style={{ padding: 24 }}>
             {isLoading ? <ActivityIndicator /> :
-                <Text style={styles.flipResultText}>{data.toUpperCase()}</Text>
+                <Text style={styles.flipResultText}>{Object.values(data)[0]}</Text>
             }
         </View>
 
