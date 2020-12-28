@@ -1,7 +1,8 @@
-import * as React from "react";
+import React , { useEffect, useState } from 'react';
 import "react-native-gesture-handler";
-import { Button, View, Text } from 'react-native';
+import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import HomePage from "./components/HomePage/HomePage";
+import StockPage from "./components/StockPage/StockPage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,9 +16,7 @@ function Home() {
 
 function CalendarScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Calendar Screen</Text>
-    </View>
+    <StockPage />
   );
 }
 
