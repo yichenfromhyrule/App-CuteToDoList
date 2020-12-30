@@ -3,7 +3,7 @@ import { Image, StyleSheet, Alert, Text, View, Button, ActivityIndicator} from '
 import { ScrollView } from 'react-native-gesture-handler';
 
 
-function getStockData() {
+function OnePieceStockInfo() {
     const [isLoading, setLoading] = React.useState(true);
     const [data, setData] = React.useState('');
     if(isLoading){
@@ -17,28 +17,58 @@ function getStockData() {
             .then(response => response.json())
             .then(data => {         
                 setData(data);
+                setLoading(false);
             })
             .catch(err => {
                 console.log(err);
             })
             .finally(() => setLoading(false));;
     }
-    const dataValues = Object.values(data);
-    const dataVValues = JSON.stringify(dataValues[0]);
-    if(dataValues[0]){
-        const dVV = Object.entries(dataValues[0]);
-        console.log(dVV);
+    const onePieceStockValues = Object.values(data);
+    let onePieceStock_name = "";
+    let onePieceStock_close = "";
+    if(onePieceStockValues[0]){
+        const onePieceStockArray = Object.entries(onePieceStockValues[0]); 
+        onePieceStock_name = onePieceStockArray[0][1];
+        onePieceStock_close = onePieceStockArray[7][1];
     }
     
     return(
         <View>
-            <Text>
-                {dataVValues}
-            </Text>
-            
+            <View style={styles.oneStockBox}>
+                <View style={styles.oneStockContainer}>
+                    <View style={styles.stockNameContainer}>
+                        <Text>{onePieceStock_name}</Text>
+                    </View>
+                    <View style={styles.stockNameContainer}>
+                        <Text>{onePieceStock_close}</Text>
+                    </View>     
+                </View>
+            </View>
         </View>
     );
 }
 
+export default OnePieceStockInfo;
 
-export default getStockData;
+const styles = StyleSheet.create({
+    oneStockBox: {
+        marginTop: 70,
+        height: 50,
+        alignItems:"center",
+    },
+    oneStockContainer: {
+        width: 300,
+        alignItems:"center",
+        backgroundColor: "white",
+        flexDirection: 'row',
+        borderRadius: 10,
+    },
+    stockNameContainer: {
+        height: 50,
+        width:150,
+        flexDirection: 'column',
+        justifyContent: "center",
+        alignItems: "center",
+    }
+});

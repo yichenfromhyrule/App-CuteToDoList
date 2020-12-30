@@ -4,7 +4,12 @@ export default {
     "page": {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: "white",
+        backgroundColor: "#2E265F",
+    },
+    "image": {
+        flex: 1,
+        resizeMode: "cover",
+        flexDirection: "column",
     },
     "titleBlock": {
         flexDirection: "column",
@@ -12,12 +17,5 @@ export default {
         justifyContent: "center",
         alignItems: "center",
     },
-    "titleText": {
-        marginTop: 0.05 * height,
-        marginBottom: 0.05 * height,
-        fontSize: 15,
-        color: "black",
-    },
-    
     
 }

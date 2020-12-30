@@ -1,6 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import "react-native-gesture-handler";
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import HomePage from "./components/HomePage/HomePage";
 import StockPage from "./components/StockPage/StockPage";
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,7 +15,7 @@ function Home() {
   );
 }
 
-function CalendarScreen() {
+function StockScreen() {
   return (
     <StockPage />
   );
@@ -33,45 +34,47 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'home'
-                : 'home-outline';
-            } 
-            else if (route.name === 'Calendar') {
-              iconName = focused
-                ? 'calendar'
-                : 'calendar-outline';
-            }
-            else if (route.name === 'About') {
-              iconName = focused
-                ? 'ellipsis-horizontal-circle'
-                : 'ellipsis-horizontal-circle-outline';
-            }
+              if (route.name === 'Home') {
+                iconName = focused
+                  ? 'home'
+                  : 'home-outline';
+              } 
+              else if (route.name === 'Stock') {
+                iconName = focused
+                  ? 'bar-chart'
+                  : 'bar-chart-outline';
+              }
+              else if (route.name === 'About') {
+                iconName = focused
+                  ? 'ellipsis-horizontal-circle'
+                  : 'ellipsis-horizontal-circle-outline';
+              }
 
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: '#4973AF',
-          inactiveTintColor: 'gray',
-        }}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home" }}
-        />
-        <Tab.Screen name="Calendar" component={CalendarScreen} />
-        <Tab.Screen name="About" component={AboutScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: '#4973AF',
+            inactiveTintColor: 'gray',
+          }}
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{ title: "Home" }}
+          />
+          <Tab.Screen name="Stock" component={StockScreen} />
+          <Tab.Screen name="About" component={AboutScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
