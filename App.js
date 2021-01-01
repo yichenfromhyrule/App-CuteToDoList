@@ -21,6 +21,14 @@ function StockScreen() {
   );
 }
 
+function SearchScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Search Screen</Text>
+    </View>
+  );
+}
+
 function AboutScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -43,13 +51,18 @@ function App() {
 
               if (route.name === 'Home') {
                 iconName = focused
-                  ? 'home'
-                  : 'home-outline';
+                  ? 'analytics'
+                  : 'analytics-outline';
               } 
               else if (route.name === 'Stock') {
                 iconName = focused
                   ? 'bar-chart'
                   : 'bar-chart-outline';
+              }
+              else if (route.name === 'Search') {
+                iconName = focused
+                  ? 'earth'
+                  : 'earth-outline';
               }
               else if (route.name === 'About') {
                 iconName = focused
@@ -71,6 +84,7 @@ function App() {
             options={{ title: "Home" }}
           />
           <Tab.Screen name="Stock" component={StockScreen} />
+          <Tab.Screen name="Search" component={SearchScreen} />
           <Tab.Screen name="About" component={AboutScreen} />
         </Tab.Navigator>
       </NavigationContainer>
