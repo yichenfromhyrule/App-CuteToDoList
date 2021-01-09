@@ -8,9 +8,13 @@ module.exports = {
         paddingBottom: 0.03 * width,
         paddingLeft: 0.05 * width,
         paddingRight: 0.05 * width,
+        borderBottomColor: '#ACA0DE',
+        borderBottomWidth: 1,
     },
     "stockNameContainer" : {
         width: 0.5 * width,
+        textAligin: "center",
+        justifyContent: "center",
     },
     "stockTimeContainer" : {
         width: 0.22 * width,

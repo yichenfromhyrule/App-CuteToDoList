@@ -36,15 +36,15 @@ export default function HomeStock(props) {
     <View>
         <View style={styles.stockContainer}>
             <View style={styles.stockNameContainer}>
-                <Text style={{color: 'white', fontSize: 24}}>{onePieceStock_name}</Text>
+                <Text style={{color: '#2E265F', fontSize: 20}}>{onePieceStock_name}</Text>
             </View>
             <View style={styles.stockTimeContainer}>
-                <Text style={{color: 'white', fontSize: 16}}>{props.highTime}</Text>
-                <Text style={{color: 'white', fontSize: 12}}>{props.highPrice}</Text>
+                <Text style={{color: '#2E265F', fontSize: 16}}>{props.highTime}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 12}}>{onePieceStock_close}</Text>
             </View>
             <View style={styles.stockTimeContainer}>
-                <Text style={{color: 'white', fontSize: 16}}>{props.lowTime}</Text>
-                <Text style={{color: 'white', fontSize: 12}}>{props.lowPrice}</Text>
+                <Text style={{color: '#2E265F', fontSize: 16}}>{props.lowTime}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 12}}>{props.lowPrice}</Text>
             </View>
             
         </View>

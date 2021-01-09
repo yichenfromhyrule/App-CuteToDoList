@@ -25,7 +25,7 @@ module.exports = {
         paddingBottom: 0.01 * width,
         paddingLeft: 0.05 * width,
         paddingRight: 0.05 * width,
-        backgroundColor: '#0D0B3E'
+        backgroundColor: '#ACA0DE'
     },
     "titleName" : {
         width: 0.5 * width,

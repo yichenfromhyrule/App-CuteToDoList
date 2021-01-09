@@ -16,25 +16,25 @@ export default class HomeHeader extends Component {
           <View>
             <View style={styles.headerContainer}>
               <View style={styles.headerDate}>
-                <Text style={{color: 'white', fontSize: 20}}>{date}</Text>
+                <Text style={{color: '#2E265F', fontSize: 20}}>{date}</Text>
               </View>
               <View style={styles.headerIcon}>
-                <Feather name="search" size={24} color="white" />
+                <Feather name="search" size={24} color="#2E265F" />
               </View>
               <View style={styles.headerIcon}>
-                <AntDesign name="plus" size={24} color="white" />
+                <AntDesign name="plus" size={24} color="#2E265F" />
               </View>
             </View>
 
             <View style={styles.titleContainer}>
               <View style={styles.titleName}>
-                <Text style={{color: '#BFBFBF', fontSize: 15}}>stock name</Text>
+                <Text style={{color: 'white', fontSize: 15}}>stock name</Text>
               </View>
               <View style={styles.titleTime}>
-                <Text style={{color: '#BFBFBF', fontSize: 15}}>Highest</Text>
+                <Text style={{color: 'white', fontSize: 15}}>Highest</Text>
               </View>
               <View style={styles.titleTime}>
-                <Text style={{color: '#BFBFBF', fontSize: 15}}>Lowest</Text>
+                <Text style={{color: 'white', fontSize: 15}}>Lowest</Text>
               </View>
             </View>
           </View>
