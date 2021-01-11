@@ -7,7 +7,7 @@ export default function HomeStock(props) {
   const [isLoading, setLoading] = React.useState(true);
   const [data, setData] = React.useState('');
   if(isLoading){
-    fetch("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=TSLA", {
+    fetch("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=".concat(props.stockName), {
 	  "method": "GET",
 	  "headers": {
 	    "x-rapidapi-key": "6344837b96msh4dd4d2909be9cbbp1320a9jsn673352df54c6",
@@ -26,25 +26,27 @@ export default function HomeStock(props) {
     }
     const onePieceStockValues = Object.values(data);
     let onePieceStock_name = "";
-    let onePieceStock_close = "";
+    let onePieceStock_high = "";
+    let onePieceStock_low = "";
     if(onePieceStockValues[0]){
         const onePieceStockArray = Object.entries(onePieceStockValues[0]); 
         onePieceStock_name = onePieceStockArray[0][1];
-        onePieceStock_close = onePieceStockArray[7][1];
+        onePieceStock_high = onePieceStockArray[2][1];
+        onePieceStock_low = onePieceStockArray[3][1];
   }
   return(
     <View>
         <View style={styles.stockContainer}>
             <View style={styles.stockNameContainer}>
-                <Text style={{color: '#2E265F', fontSize: 20}}>{onePieceStock_name}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 20}}>{props.stockName}</Text>
             </View>
             <View style={styles.stockTimeContainer}>
-                <Text style={{color: '#2E265F', fontSize: 16}}>{props.highTime}</Text>
-                <Text style={{color: '#ACA0DE', fontSize: 12}}>{onePieceStock_close}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 16}}>{props.highTime}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 12}}>{onePieceStock_high}</Text>
             </View>
             <View style={styles.stockTimeContainer}>
-                <Text style={{color: '#2E265F', fontSize: 16}}>{props.lowTime}</Text>
-                <Text style={{color: '#ACA0DE', fontSize: 12}}>{props.lowPrice}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 16}}>{props.lowTime}</Text>
+                <Text style={{color: '#ACA0DE', fontSize: 12}}>{onePieceStock_low}</Text>
             </View>
             
         </View>

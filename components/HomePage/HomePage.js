@@ -10,8 +10,36 @@ import HomeStock from "./HomePageComponents/HomeStock/HomeStock";
 */
 
 export default function HomePage() {
-  const element = <HomeStock 
-    stockName="HIII"
+  const element1 = <HomeStock 
+    stockName="AAPL"
+    highPrice="333.22"
+    highTime="10:30"
+    lowPrice="331.01"
+    lowTime="14:54"
+  />
+  const element2 = <HomeStock 
+    stockName="PFE"
+    highPrice="333.22"
+    highTime="10:30"
+    lowPrice="331.01"
+    lowTime="14:54"
+  />
+  const element3 = <HomeStock 
+    stockName="IQ"
+    highPrice="333.22"
+    highTime="10:30"
+    lowPrice="331.01"
+    lowTime="14:54"
+  />
+  const element4 = <HomeStock 
+    stockName="TWTR"
+    highPrice="333.22"
+    highTime="10:30"
+    lowPrice="331.01"
+    lowTime="14:54"
+  />
+  const element5 = <HomeStock 
+    stockName="ZM"
     highPrice="333.22"
     highTime="10:30"
     lowPrice="331.01"
@@ -24,7 +52,11 @@ export default function HomePage() {
             <View style={styles.titleBlock}>
               <HomeHeader />
             </View>
-            {element}
+            {element1}
+            {element2}
+            {element3}
+            {element4}
+            {element5}
           </SafeAreaView>
         </View>
       </View>

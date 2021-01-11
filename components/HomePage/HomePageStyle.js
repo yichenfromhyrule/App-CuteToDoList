@@ -4,7 +4,7 @@ export default {
     "page": {
         flex: 1,
         flexDirection: "column",
-        backgroundColor: "#FFE0E0",
+        backgroundColor: "white",
     },
     "image": {
         flex: 1,

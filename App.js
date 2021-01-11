@@ -3,7 +3,6 @@ import "react-native-gesture-handler";
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import HomePage from "./components/HomePage/HomePage";
-import StockPage from "./components/StockPage/StockPage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -17,7 +16,7 @@ function Home() {
 
 function StockScreen() {
   return (
-    <StockPage />
+    <HomePage />
   );
 }
 
