@@ -3,7 +3,6 @@ import { ImageBackground, Button, View, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import styles from "./HomePageStyle";
 import HomeHeader from "./HomePageComponents/HomeHeader/HomeHeader";
-import HomeStock from "./HomePageComponents/HomeStock/HomeStock";
 
 /*
 * Set Date as a Title
