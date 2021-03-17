@@ -1,22 +1,22 @@
 import { Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 module.exports = {
-    "headerContainer":{
+    "cityWeatherContainer": {
+        flexDirection: 'row',
+        width: 0.9 * width,
+        height: 0.12 * height,
+        backgroundColor: 'red',
+    },
+    "cityContainer" : {
         flexDirection: 'row',
         width: 1 * width,
-        paddingTop: 0.03 * width,
-        paddingBottom: 0.03 * width,
+        height: 0.12 * height,
+        paddingTop: 0.01 * width,
+        paddingBottom: 0.01 * width,
         paddingLeft: 0.05 * width,
         paddingRight: 0.05 * width,
-    },
-    "headerDate" : {
-        width: 0.7 * width,
-    },
-    "headerIcon" : {
-        width: 0.1 * width,
         textAligin: "center",
         justifyContent: "center",
         alignItems: "center",
     },
-
 }
